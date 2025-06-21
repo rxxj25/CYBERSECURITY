@@ -1,62 +1,93 @@
 # CYBERSECURITY
 
-# 📘 Blockchain Development Labs – 2025
+# 🛡️ Cybersecurity & Ethical Hacking Labs – 2025
 
-This repository contains a series of hands-on blockchain development labs using **Solidity** and **Python**. The labs explore key concepts such as smart contracts, token systems, Merkle Trees, Proof-of-Work, and decentralized peer-to-peer networking.
-
----
-
-## 🔍 Lab Overview
-
-| Lab No. | Title                                | Language | Key Concepts                                      |
-|--------|--------------------------------------|----------|--------------------------------------------------|
-| 2      | Control Flow in Solidity             | Solidity | if-else, while, do-while, for, break, continue   |
-| 3      | Token Management System              | Solidity | ERC-20 basics, admin control, modifiers, events  |
-| 6–7    | Structs, Mappings & MetaMask         | Solidity | Structs, mappings, data access, Sepolia testnet  |
-| 7      | P2P Blockchain Network               | Python   | Socket programming, peer sync, block validation  |
-| 8–9    | Merkle Tree + Blockchain Integrity   | Python   | Merkle root, tamper detection, hash validation   |
-| 10     | Blockchain with Mining (PoW)         | Python   | Proof-of-Work, nonce, mining difficulty          |
+This repository documents a series of practical cybersecurity and ethical hacking labs conducted using **Kali Linux**, **VirtualBox**, **Python**, **Wireshark**, **iptables**, **SET Toolkit**, **Snort**, **Cuckoo Sandbox**, and **Shodan**.
 
 ---
 
-## 🧪 Lab Details
+## 📚 Lab Summary
 
-### 🔹 Lab 2: Control Flow in Solidity
-Implemented Solidity functions demonstrating control flow:
-- `isPositive`
-- `recursiveSum` (using `while`)
-- `sumBackwards` (using `do-while`)
-- `factorial` (using `for`)
-- `stopCountAtFive` (using `break`)
-- `skipSumAtThree` (using `continue`)
+| Lab No. | Title                                                                 | Tools & Skills Covered                           |
+|--------:|------------------------------------------------------------------------|--------------------------------------------------|
+| 1       | VirtualBox Setup: Kali Linux & Windows XP                             | VirtualBox, OS setup                             |
+| 2       | Website Cloning with SET Toolkit                                       | SET Toolkit, Social Engineering                  |
+| 4       | Intrusion Detection using Wireshark & Snort                            | HTTP/FTP packet capture, Snort basics            |
+| 5       | Simulating APT & Meterpreter Attack                                    | SET Toolkit, Apache, Meterpreter                 |
+| 6       | DDoS Attack with LOIC/Slowloris                                        | Wireshark, Slowloris, Apache                     |
+| 7       | Python Keylogger with Ethical Analysis                                 | Python, Pynput, Logging, Ethics                  |
+| 8       | Malware Analysis using Cuckoo Sandbox & Wireshark                     | PCAP decryption, VirusTotal, TLS inspection      |
+| 9       | IoT Vulnerability Scan using Shodan API                                | Shodan, Python scripting, CSV output             |
+| 10      | Firewall Configuration with iptables                                   | iptables, Port filtering, Rate-limiting, DoS defense |
 
-### 🔹 Lab 3: Token Management System
-Built a token system with:
-- `view`, `pure`, `payable`, and `fallback` functions
-- Access control using `onlyAdmin` modifier
-- Error handling: `require`, `revert`, `assert`
-- Token events: `Transfer`, `Deposit`
+---
 
-### 🔹 Lab 6–7: Structs and Mappings with MetaMask
-Student Management System:
-- Functions: `addStudent`, `getStudent`, `updateStudent`, `studentExists`
-- Deployment on **Sepolia Testnet** via **MetaMask**
-- Used **structs** and **mappings** for efficient data storage
+## 🔧 Setup Instructions
 
-### 🔹 Lab 7: P2P Blockchain in Python
-Simulated a decentralized blockchain:
-- Nodes connect using TCP sockets
-- Broadcast blocks to connected peers
-- Handle invalid and stale blocks with validation logic
+### ✅ VirtualBox + OS Installation (Lab 1)
+- Install **Oracle VirtualBox**.
+- Install **Kali Linux** and **Windows XP**.
+- Configure RAM, disk space, ISO mounting, and Guest Additions.
 
-### 🔹 Lab 8–9: Blockchain with Merkle Tree
-Implemented Merkle Tree for transaction integrity:
-- Each block computes a Merkle Root
-- Tampering detection by altering transactions
-- Revalidation of hashes and root
+---
 
-### 🔹 Lab 10: Proof-of-Work Blockchain
-Simulated mining:
-- Mining process requires hash to match difficulty (e.g., leading zeros)
-- Adjustable difficulty
-- Validates block hashes and linkage for chain integrity
+## 🔓 Social Engineering & Attacks
+
+### 📌 Lab 2: Website Cloning with SET
+- Tool: `setoolkit`
+- Technique: Credential Harvester → Site Cloner
+- Data captured on fake login pages and forwarded to terminal.
+
+### 📌 Lab 5: APT Simulation with Meterpreter
+- Create malicious payloads using **SET**.
+- Reverse connection via `reverse_tcp`.
+- Extract victim data: `hashdump`, `screenshot`, `sysinfo`.
+
+---
+
+## 📈 Traffic Analysis & Forensics
+
+### 📌 Lab 4: IDS with Snort/Wireshark
+- Analyze `http` and `ftp` credentials via packet capture.
+- Monitor uploads, passwords, and stream decryption.
+- Visualize with I/O graphs and protocol filters.
+
+### 📌 Lab 8: Malware Analysis with Wireshark
+- Decrypt SSL traffic using session keys.
+- Analyze `.dll` payloads.
+- Use **VirusTotal** to classify malware (e.g., Dridex).
+- Identify infected systems using `nbns` and TLS stream inspection.
+
+---
+
+## 💣 Network Attacks
+
+### 📌 Lab 6: DDoS Simulation (LOIC/Slowloris)
+- Use `slowloris.py` to flood victim server on port 80.
+- Measure impact using **Wireshark** and Apache logs.
+
+---
+
+## 🛡️ Defense & Mitigation
+
+### 📌 Lab 10: Configuring iptables
+- Flush rules and define new policies.
+- Block ICMP, limit SSH and HTTP.
+- Simulate DoS attacks and mitigate via rate-limiting.
+- Create custom logging chains (`LOGGING`).
+- Restrict outgoing SSH to specific IPs.
+
+---
+
+## ⌨️ Python Automation
+
+### 📌 Lab 7: Keylogger with Python
+- Built using `pynput`
+- Records keystrokes to `key_log.txt`
+- Extract credentials with regex patterns
+- Includes ethical guidelines and countermeasures
+
+### 📌 Lab 9: IoT Scan with Shodan API
+- Automated scanning for IoT devices
+- Collects open ports, known vulnerabilities
+- CSV export and recommendation engine
